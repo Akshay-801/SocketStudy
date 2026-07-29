@@ -5,8 +5,11 @@ To perform a study on Socket Programming
 ## Introduction:
 
  	Socket programming is a crucial aspect of network communication, allowing for data exchange between computers over a network. It forms the backbone of various networked applications, enabling communication between clients and servers. This study explores the fundamental concepts of socket programming, its use cases, and provides a practical example to demonstrate its implementation.
+
 ## Understanding Socket Programming:
+
 	Socket programming involves the use of sockets, which serve as endpoints for communication. A socket is identified by an IP address and a port number, and it facilitates data transfer between a client and a server. The two main types of sockets are Stream Sockets, which provide a reliable, connection-oriented communication, and Datagram Sockets, which are connectionless and suitable for scenarios where reliability is less critical.
+
 ## Key Concepts in Socket Programming:
 1.Sockets
 •	A socket is a software representation of a communication endpoint in a network.
@@ -53,6 +56,24 @@ Socket programming finds applications in various domains, including web developm
 4.	Networked Games: Online multiplayer games rely on socket programming to facilitate communication between game clients and servers.
 5.	RPC mechanisms: which allow processes to execute code on a remote server, often use socket programming for communication.
 
+## client.py
+
+```
+import socket
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+client_socket.connect(('localhost', 8000))
+
+print(f"Client connected from: {client_socket.getsockname()}")
+
+server_message = client_socket.recv(1024).decode()
+print(f"Received from server: {server_message}")
+
+client_socket.send("Acknowledgement received from the client.".encode())
+
+client_socket.close()
+```
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
