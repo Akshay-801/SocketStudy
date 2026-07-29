@@ -58,7 +58,7 @@ Socket programming finds applications in various domains, including web developm
 
 ## client.py
 
-```
+```py
 import socket
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -77,7 +77,7 @@ client_socket.close()
 
 ## server.py
 
-```
+```py
 import socket
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -98,6 +98,15 @@ print(f"Received from client: {data.decode()}")
 conn.close()
 server_socket.close()
 ```
+## Output
+
+### Server
+
+![alt text](./images/image.png)
+
+### Client
+
+![alt text](./images/image-1.png)
 
 ## Result:
 Thus the study of Socket Programming Completed Successfully
